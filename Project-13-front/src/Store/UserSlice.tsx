@@ -8,14 +8,15 @@ export const loginUser = createAsyncThunk(
       `http://localhost:3001/api/v1/user/login`,
       userCredentials
     );
-    const response = await request.data.data;
+    const response = await request.data;
     localStorage.setItem("user", JSON.stringify(response));
+    // console.log(response.data.body.token);
 
     return response;
   }
 );
 
-const userSlice = createSlice({
+const loginSlice = createSlice({
   name: "user",
   initialState: {
     loading: false,
@@ -51,4 +52,4 @@ const userSlice = createSlice({
   reducers: undefined,
 });
 
-export default userSlice.reducer;
+export const useReducer = loginSlice.reducer;

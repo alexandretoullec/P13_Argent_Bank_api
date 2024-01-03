@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./login.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../Store/UserSlice";
+import { loginUser, userProfile } from "../../Store/UserSlice";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  //states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,6 +26,7 @@ const SignIn = () => {
         setEmail("");
         setPassword("");
         navigate("/user");
+        console.log(result.payload.body.token);
       }
     });
   };
@@ -62,7 +64,11 @@ const SignIn = () => {
           <button className="sign-in-button">
             {loading ? "Loading..." : "Login"}
           </button>
-          {error && <div role="alert">{error}</div>}
+          {error && (
+            <div className="alert alert-danger" role="alert">
+              {error}
+            </div>
+          )}
           {/* <!-- PLACEHOLDER DUE TO STATIC SITE --> */}
           {/* <a href="./user.html" className="sign-in-button">
             Sign In

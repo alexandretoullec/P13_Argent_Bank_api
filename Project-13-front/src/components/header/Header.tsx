@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  // let user = JSON.parse(localStorage.getItem());
   return (
     <nav className="main-nav">
       <NavLink className="main-nav-logo" to="/">
