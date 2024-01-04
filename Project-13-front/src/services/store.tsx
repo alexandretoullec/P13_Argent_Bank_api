@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "../features/userSlice";
+import { featuresSlices } from "./FeaturesSlice";
 
 /**
  * @function configureStore - Configures redux store using the configureStore() function from redux toolkit
@@ -9,6 +10,7 @@ import userReducer from "../features/userSlice";
 // eslint-disable-next-line react-refresh/only-export-components
 export default configureStore({
   reducer: {
+    features: featuresSlices.reducer,
     user: userReducer,
   },
 });

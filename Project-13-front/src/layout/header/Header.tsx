@@ -1,6 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 /* redux */
 import { useSelector, useDispatch } from "react-redux";
 import { logout, selectUser } from "../../features/userSlice";
@@ -36,6 +39,9 @@ const Header = () => {
             <NavLink className="main-nav-item" to="/user">
               Hello
               {user.firstName.charAt(0).toUpperCase() + user.firstName.slice(1)}
+            </NavLink>
+            <NavLink to="/" onClick={userLogout}>
+              <FontAwesomeIcon icon={faRightFromBracket} /> Sign Out
             </NavLink>
           </div>
         ) : (
