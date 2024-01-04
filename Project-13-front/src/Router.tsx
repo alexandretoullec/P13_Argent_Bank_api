@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./layout/header/Header";
+import Footer from "./layout/footer/Footer";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
