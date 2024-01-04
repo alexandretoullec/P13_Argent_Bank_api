@@ -26,11 +26,10 @@ const SignIn = () => {
         setEmail("");
         setPassword("");
         navigate("/user");
-        console.log(result.payload.body.token);
       }
     });
   };
-
+  
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">
